@@ -4,3 +4,4 @@
 *.pyc
 local_settings.py
 web_env/
+zapper/zapper_db
