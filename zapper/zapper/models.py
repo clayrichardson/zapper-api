@@ -1,5 +1,6 @@
 
 from django.db import models
+from django.contrib.auth.models import User
 
 HASH_LENGTH = 32
 
@@ -21,3 +22,8 @@ class Transfer(models.Model):
     to_user = models.ForeignKey(User)
     file_id = models.ForeignKey(File)
 
+class UserToFile(models.Model):
+    user = models.ForeignKey(User)
+    file_id = models.ForeignKey(File)
+    class Meta:
+        unique_together = (('user', 'file_id'),)
