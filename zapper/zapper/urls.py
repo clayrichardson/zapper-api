@@ -3,11 +3,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-from zapper.api import UserResource
-
-user_resource = UserResource()
-
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include(user_resource.urls)),
+    url(r'^login$', 'zapper.end_points.access.login'),
 )
