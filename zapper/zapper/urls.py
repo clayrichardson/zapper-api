@@ -5,10 +5,13 @@ from tastypie.api import Api
 
 from zapper.api import ApiKeyResource
 from zapper.api import FileResource
+from zapper.api import UserResource
 
 v1_api = Api(api_name = 'v1')
 v1_api.register(ApiKeyResource())
 v1_api.register(FileResource())
+v1_api.register(UserResource())
+
 
 admin.autodiscover()
 
