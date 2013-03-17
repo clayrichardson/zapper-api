@@ -1,0 +1,24 @@
+[
+{
+  "pk": 1, 
+  "model": "zapper.file", 
+  "fields": {
+    "owner": 1, 
+    "chunks": [1, 2, 3, 4, 5],
+    "size": 5, 
+    "uuid": "a61c19bc03fb42388b861d07adf16797", 
+    "name": "file1"
+  }
+},
+{
+  "pk": 2, 
+  "model": "zapper.file", 
+  "fields": {
+    "owner": 2, 
+    "chunks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "size": 10, 
+    "uuid": "267b0f3d412f48a98229279e45e0efea", 
+    "name": "file2"
+  }
+}
+]
