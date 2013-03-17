@@ -1,0 +1,20 @@
+[
+{
+  "pk": 1, 
+  "model": "zapper.apikey", 
+  "fields": {
+    "key": "d470a6f95a0a429091b06d87c752c292",
+    "secret": "d470a6f95a0a429091b06d87c752c292",
+    "enabled": true
+  }
+},
+{
+  "pk": 2, 
+  "model": "zapper.apikey", 
+  "fields": {
+    "key": "c938e1ba014c4854a3ada90067891968",
+    "secret": "c938e1ba014c4854a3ada90067891968",
+    "enabled": false
+  }
+}
+]
