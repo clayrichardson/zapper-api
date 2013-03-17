@@ -4,9 +4,11 @@ from django.contrib import admin
 from tastypie.api import Api
 
 from zapper.api import ApiKeyResource
+from zapper.api import FileResource
 
 v1_api = Api(api_name = 'v1')
 v1_api.register(ApiKeyResource())
+v1_api.register(FileResource())
 
 admin.autodiscover()
 
