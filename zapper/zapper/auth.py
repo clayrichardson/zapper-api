@@ -12,7 +12,7 @@ class UserAuthentication(Authentication):
             return False
 
         try:
-            user = User.objects.get(username=email)
+            user = User.objects.get(email=email)
             if user.check_password(password):
                 return True
             else:
@@ -31,7 +31,7 @@ class ZapperAuthentication(Authentication):
             return False
 
         try:
-            user = User.objects.get(username=email)
+            user = User.objects.get(email=email)
             apikey = ApiKey.objects.get(
                     key = key,
                     secret = secret,
