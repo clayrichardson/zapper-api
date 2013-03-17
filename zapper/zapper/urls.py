@@ -12,8 +12,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login$', 'zapper.end_points.access.login'),
     url(r'^api/', include(v1_api.urls)),
 
-    url(r'^$', 'zapper.views.check_login'),
+    url(r'^$', 'zapper.views.landing_page'),
 )
