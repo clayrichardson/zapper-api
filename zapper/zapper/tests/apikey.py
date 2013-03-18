@@ -17,15 +17,27 @@ class ApiKeyResourceTest(ResourceTestCase):
         self.user1 = User.objects.get(username='user1')
 
     def test_authentication(self):
-        post_data = {
+        data = {
             'email': 'user1@user.com',
             'password': 'user1password',
         }
         response = self.api_client.get(
             '/api/v1/apikey/',
             format = 'json',
-            data = post_data,
+            data = data,
         )
-        logger.debug('response: %s' % (response))
         self.assertValidJSONResponse(response)
+
+    def test_unauthorized(self):
+        data = {
+            'email': 'user1@user.com',
+            'password': 'wrongpassword',
+        }
+
+        response = self.api_client.get(
+            '/api/v1/apikey/',
+            format = 'json',
+            data = data,
+        )
+        self.assertHttpUnauthorized(response)
 
