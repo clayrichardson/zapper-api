@@ -2,12 +2,87 @@
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}/static/css/landing.css">
-
-		<script data-main="{{ STATIC_URL }}/static/js/main.js" src="{{ STATIC_URL }}/static/js/require.js"></script>
-
+		<script type="text/javascript" src="{{ STATIC_URL }}/static/vendors/js/jquery.js"></script>
 		<title>Zapper - Zap Your Files</title>
 	</head>
 
 	<body>
+		<div class="middle-col">
+			<span class="zapper-logo"></span>
+			<p class="tag-line">The easiest way to zap files from one device to another.</p>
+			<span class="dummy-app"></span>
+			<div class="phantom-footer"></div>
+		</div>
+		<span class="footer-mound-shadow"></span>
+		<div class="footer">
+			<div class="footer-middle-col">
+				<div class="join-box">
+					<div class="join-form">
+						<input type="text" placeholder="Join the waiting list">
+						<a href="#">
+							<span class="join-submit">
+								<span class="join-ico"></span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-background"></div>
+		</div>
 	</body>
+
+	<script type="text/javascript">
+		var $join_input = $('.join-form input'),
+			$join_btn = $('.join-form a');
+		$join_input.focus(function () {
+			$(this).attr('placeholder', 'john@example.com');
+			$(this).addClass('active-placeholder');
+		});
+		$join_input.blur(function () {
+			$(this).attr('placeholder', 'Join the Waiting List');
+			$(this).removeClass('active-placeholder');
+		});
+		$join_input.keypress(function (e) {
+			if (e.which === 13) {
+				$join_btn.click();
+			}
+		});
+
+		$join_btn.click(function () {
+			var email = $join_input.val();
+			// validate email
+			// error or:
+			// submit
+			// error or:
+			// success
+			return false;
+		});
+	</script>
+
+	<script type="text/javascript">
+		// the middle column needs to stay centered yet keep
+		// an absolute position to have the opaque backdrop
+		$(document).ready(function () {
+			var $footer_col = $('.footer-middle-col'),
+				$footer_mound_shadow = $('.footer-mound-shadow'),
+				footer_col_width = $footer_col.width(),
+				footer_mound_width = $footer_mound_shadow.width(),
+				center_elem = function (elem_width, $elem) {
+					var doc_width = $(document).width(),
+						left_gutter = (doc_width - elem_width) / 2;
+					if (left_gutter < 20) {
+						left_gutter = 20;
+					}
+
+					$elem.css('margin-left', left_gutter + 'px');
+				};
+
+			$(window).resize(function () {
+				center_elem(footer_col_width, $footer_col);
+				center_elem(footer_mound_width, $footer_mound_shadow);
+			});
+			center_elem(footer_col_width, $footer_col);
+			center_elem(footer_mound_width, $footer_mound_shadow);
+		});
+	</script>
 </html>
