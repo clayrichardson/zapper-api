@@ -25,11 +25,15 @@ class FileResource(ModelResource):
         authentication = ZapperApiKeyAuthentication()
         authorization = ZapperAuthorization()
 
-    def obj_create(self, bundle, request=None, **kwargs):
-        logger.debug('bundle: %s' % (bundle))
-        logger.debug('request: %s' % (request))
+    def get_object_list(self, bundle, request=None, **kwargs):
+        return super(FileResource,
+            self).get_object_list(bundle).filter(
+            owner=bundle.user.id
+        )
+
+    def obj_create(self, bundle, **kwargs):
         return super(FileResource, self).obj_create(
-            bundle, request, user=request.user
+            request, user=request.user
         )
 
 class UserResource(ModelResource):
