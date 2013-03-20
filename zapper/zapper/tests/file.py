@@ -74,5 +74,5 @@ class FileResourceTest(ResourceTestCase):
         )
 
         logger.debug('response: %s' % (response))
-        self.assertHttpUnauthorized(response)
+        self.assertHttpNotFound(response)
 
