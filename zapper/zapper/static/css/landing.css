@@ -2,6 +2,10 @@
   font-family: ProximaNovaLight;
   src: url(/static/fonts/proxima_nova/ProximaNova-Light.otf) format('opentype');
 }
+@font-face {
+  font-family: ProximaNovaRegular;
+  src: url(/static/fonts/proxima_nova/ProximaNova-Regular.otf) format('opentype');
+}
 .ellipsis {
   white-space: nowrap;
   overflow: hidden;
@@ -9,18 +13,15 @@
 }
 html,
 body {
-  min-width: 500px;
+  min-width: 960px;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #3E4759;
 }
-body {
-  z-index: 20;
-}
 body .middle-col {
-  width: 500px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   text-align: center;
@@ -46,6 +47,76 @@ body .middle-col .dummy-app {
   margin: 30px auto 0 auto;
   width: 436px;
   height: 716px;
+}
+body .middle-col .team-section {
+  position: relative;
+  min-width: 960px;
+  height: 500px;
+  margin: 60px auto 0 auto;
+}
+body .middle-col .team-section .team-bg {
+  display: block;
+  height: 500px;
+  width: 1200px;
+  background-image: url(/static/img/landing/team_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  z-index: 3;
+}
+body .middle-col .team-section .team-middle-col {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  margin: 0 auto;
+  width: 960px;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0);
+}
+body .middle-col .team-section .team-middle-col .meet-line {
+  margin: 0;
+  font-family: ProximaNovaRegular;
+  font-size: 16px;
+  color: #cfd6e6;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+body .middle-col .team-section .team-middle-col .avatar-row {
+  display: block;
+  margin-top: 50px;
+  height: 180px;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar {
+  display: inline-block;
+  float: left;
+  height: 180px;
+  width: 180px;
+  border-radius: 90px;
+  margin: 0 30px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(1) {
+  background-image: url(/static/img/landing/avatars/didi.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(2) {
+  background-image: url(/static/img/landing/avatars/vinay.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(3) {
+  background-image: url(/static/img/landing/avatars/clay.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(4) {
+  background-image: url(/static/img/landing/avatars/floopi.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:hover {
+  background-position: 0 180px;
+}
+body .middle-col .team-section .team-middle-col .bio-row {
+  display: block;
+  margin-top: 20px;
+  height: 50px;
+  background-color: black;
 }
 body .middle-col .phantom-footer {
   visibility: hidden;
