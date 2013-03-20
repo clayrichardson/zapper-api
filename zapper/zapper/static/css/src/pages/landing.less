@@ -34,12 +34,105 @@ body {
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.40);
         }
 
-        .dummy-app {
-            display: block;
-            background-image: url(/static/img/landing/app_sample.png);
-            margin: 30px auto 0 auto;
-            width: 436px;
+        .app-container {
+            width: 960px;
             height: 716px;
+            margin: 30px auto 0 auto;
+            display: inline-block;
+
+            .dummy-app {
+                float: left;
+                background-image: url(/static/img/landing/app_sample.png);
+                margin: 0;
+                width: 436px;
+                height: 716px;
+            }
+
+            .gutter {
+                float: left;
+                margin: 0;
+                height: 100%;
+                width: 262px;
+
+                .bullet {
+                    width: 100%;
+                    margin: 0;
+
+                    .sliver {
+                        display: inline-block;
+                        height: 100%;
+                        width: 1px;
+                        background-color: rgba(48, 55, 69, 1.0);
+                    }
+
+                    .reason {
+                        display: inline-block;
+                        width: 221px;
+
+                        .summary {
+                            margin: 0;
+                            color: rgba(207, 214, 230, 1.0);
+                            font-family: ProximaNovaRegular;
+                        }
+
+                        .description {
+                            margin: 0;
+                            color: rgba(207, 214, 230, 0.40);
+                            font-family: ProximaNovaLight;
+                            margin-top: 20px;
+                            line-height: 25px;
+                        }
+                    }
+                }
+
+                &.left {
+                    text-align: right;
+
+                    .bullet {
+                        height: 230px;
+                        margin-top: 260px;
+
+                        .sliver {
+                            margin: 0 20px 0 0;
+                            float: right;
+                        }
+
+                        .reason {
+                            margin: 47px 20px 0 0;
+                        }
+                    }
+                }
+
+                &.right {
+                    text-align: left;
+
+                    .bullet {
+                        height: 140px;
+
+                        .sliver {
+                            float: left;
+                            margin: 0 0 0 20px;
+                        }
+
+                        .reason {
+                            margin: 0 0 0 20px;
+                        }
+
+                        &:nth-child(1) {
+                            margin-top: 80px;
+                            .reason {
+                                margin-top: 2px;
+                            }
+                        }
+                        &:nth-child(2) {
+                            margin-top: 315px;
+                            .reason {
+                                margin-top: 27px;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .team-section {
@@ -200,7 +293,7 @@ body {
                 height: 50px;
                 border: 1px solid #BDC1D1;
                 .border-radius(4px);
-                .box-shadow(0 1px 0 0 rgba(0, 0, 0, .10)  inset);
+                .box-shadow(0 1px 1px 0 rgba(0, 0, 0, .10)  inset);
                 padding: 0 0 0 20px;
                 font-size: 15px;
                 color: #3D424D;

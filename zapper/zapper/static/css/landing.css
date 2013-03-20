@@ -41,12 +41,89 @@ body .middle-col .tag-line {
   font-size: 20px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
-body .middle-col .dummy-app {
-  display: block;
-  background-image: url(/static/img/landing/app_sample.png);
+body .middle-col .app-container {
+  width: 960px;
+  height: 716px;
   margin: 30px auto 0 auto;
+  display: inline-block;
+}
+body .middle-col .app-container .dummy-app {
+  float: left;
+  background-image: url(/static/img/landing/app_sample.png);
+  margin: 0;
   width: 436px;
   height: 716px;
+}
+body .middle-col .app-container .gutter {
+  float: left;
+  margin: 0;
+  height: 100%;
+  width: 262px;
+}
+body .middle-col .app-container .gutter .bullet {
+  width: 100%;
+  margin: 0;
+}
+body .middle-col .app-container .gutter .bullet .sliver {
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+  background-color: #303745;
+}
+body .middle-col .app-container .gutter .bullet .reason {
+  display: inline-block;
+  width: 221px;
+}
+body .middle-col .app-container .gutter .bullet .reason .summary {
+  margin: 0;
+  color: #cfd6e6;
+  font-family: ProximaNovaRegular;
+}
+body .middle-col .app-container .gutter .bullet .reason .description {
+  margin: 0;
+  color: rgba(207, 214, 230, 0.4);
+  font-family: ProximaNovaLight;
+  margin-top: 20px;
+  line-height: 25px;
+}
+body .middle-col .app-container .gutter.left {
+  text-align: right;
+}
+body .middle-col .app-container .gutter.left .bullet {
+  height: 230px;
+  margin-top: 260px;
+}
+body .middle-col .app-container .gutter.left .bullet .sliver {
+  margin: 0 20px 0 0;
+  float: right;
+}
+body .middle-col .app-container .gutter.left .bullet .reason {
+  margin: 47px 20px 0 0;
+}
+body .middle-col .app-container .gutter.right {
+  text-align: left;
+}
+body .middle-col .app-container .gutter.right .bullet {
+  height: 140px;
+}
+body .middle-col .app-container .gutter.right .bullet .sliver {
+  float: left;
+  margin: 0 0 0 20px;
+}
+body .middle-col .app-container .gutter.right .bullet .reason {
+  margin: 0 0 0 20px;
+}
+body .middle-col .app-container .gutter.right .bullet:nth-child(1) {
+  margin-top: 80px;
+}
+body .middle-col .app-container .gutter.right .bullet:nth-child(1) .reason {
+  margin-top: 2px;
+}
+body .middle-col .app-container .gutter.right .bullet:nth-child(2) {
+  margin-top: 315px;
+}
+body .middle-col .app-container .gutter.right .bullet:nth-child(2) .reason {
+  margin-top: 27px;
 }
 body .middle-col .team-section {
   position: relative;
@@ -201,9 +278,9 @@ body .footer .join-form input {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
   padding: 0 0 0 20px;
   font-size: 15px;
   color: #3D424D;
