@@ -274,7 +274,7 @@ body .footer .join-form input {
   float: left;
   width: 388px;
   height: 50px;
-  border: 1px solid #BDC1D1;
+  border: 1px solid #b8bdcc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -291,6 +291,9 @@ body .footer .join-form input #join-input-placeholder-styles {
   color: #A1A6B3;
   font-family: ProximaNovaLight;
   font-size: 16px;
+}
+body .footer .join-form input.active-placeholder {
+  border: 1px solid #8a8e99;
 }
 body .footer .join-form input.active-placeholder::-webkit-input-placeholder {
   color: #C3C9D9;
