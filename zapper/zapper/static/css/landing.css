@@ -187,9 +187,11 @@ body .middle-col .team-section .team-middle-col .avatar-row .avatar {
   float: left;
   height: 0px;
   width: 0px;
-  border-radius: 27px;
+  border-radius: 0px;
   margin: 117px 90px 0 90px;
   background-size: 100%;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar.bubbled {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;

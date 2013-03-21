@@ -256,12 +256,6 @@ $(document).ready(function () {
 
 		// bubble the avatars
 		function bubbleAnimation ($avatar) {
-			/*$avatar.animate({
-				opacity: 100
-			}, {
-				duration: 10000,
-				queue: false
-			});*/
 			window.setTimeout(function () {
 				$avatar.animate({
 					width: '198px',
@@ -277,7 +271,13 @@ $(document).ready(function () {
 							height: '180px',
 							'border-radius': '90px',
 							'margin': '0 30px'
-						}, {duration: 250, queue: false});
+						}, {
+							duration: 250,
+							queue: false,
+							complete: function () {
+								$avatar.addClass('bubbled');
+							}
+						});
 					}
 				});
 			}, 500);
