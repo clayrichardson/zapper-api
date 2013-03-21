@@ -33,6 +33,8 @@ body .middle-col .zapper-logo {
   margin: 60px auto 0 auto;
   width: 74px;
   height: 98px;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 body .middle-col .tag-line {
   color: rgba(255, 255, 255, 0.5);
@@ -40,6 +42,8 @@ body .middle-col .tag-line {
   font-family: ProximaNovaLight;
   font-size: 20px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 body .middle-col .app-container {
   width: 960px;
@@ -47,82 +51,88 @@ body .middle-col .app-container {
   margin: 30px auto 0 auto;
   display: inline-block;
 }
-body .middle-col .app-container .dummy-app {
+body .middle-col .app-container .app-col {
+  margin: 0 auto;
+  width: 829.2px;
+  height: 100%;
+}
+body .middle-col .app-container .app-col .dummy-app {
   float: left;
   background-image: url(/static/img/landing/app_sample.png);
+  background-size: 100% 100%;
   margin: 0;
-  width: 436px;
-  height: 716px;
+  width: 305.2px;
+  height: 501.2px;
 }
-body .middle-col .app-container .gutter {
+body .middle-col .app-container .app-col .gutter {
   float: left;
   margin: 0;
   height: 100%;
   width: 262px;
 }
-body .middle-col .app-container .gutter .bullet {
+body .middle-col .app-container .app-col .gutter .bullet {
   width: 100%;
   margin: 0;
 }
-body .middle-col .app-container .gutter .bullet .sliver {
+body .middle-col .app-container .app-col .gutter .bullet .sliver {
   display: inline-block;
   height: 100%;
   width: 1px;
   background-color: #303745;
 }
-body .middle-col .app-container .gutter .bullet .reason {
+body .middle-col .app-container .app-col .gutter .bullet .reason {
   display: inline-block;
   width: 221px;
 }
-body .middle-col .app-container .gutter .bullet .reason .summary {
+body .middle-col .app-container .app-col .gutter .bullet .reason .summary {
   margin: 0;
   color: #cfd6e6;
   font-family: ProximaNovaRegular;
 }
-body .middle-col .app-container .gutter .bullet .reason .description {
+body .middle-col .app-container .app-col .gutter .bullet .reason .description {
   margin: 0;
   color: rgba(207, 214, 230, 0.4);
   font-family: ProximaNovaLight;
   margin-top: 20px;
   line-height: 25px;
 }
-body .middle-col .app-container .gutter.left {
+body .middle-col .app-container .app-col .gutter.left {
   text-align: right;
 }
-body .middle-col .app-container .gutter.left .bullet {
+body .middle-col .app-container .app-col .gutter.left .bullet {
   height: 230px;
   margin-top: 260px;
 }
-body .middle-col .app-container .gutter.left .bullet .sliver {
+body .middle-col .app-container .app-col .gutter.left .bullet .sliver {
   margin: 0 20px 0 0;
   float: right;
 }
-body .middle-col .app-container .gutter.left .bullet .reason {
+body .middle-col .app-container .app-col .gutter.left .bullet .reason {
   margin: 47px 20px 0 0;
 }
-body .middle-col .app-container .gutter.right {
+body .middle-col .app-container .app-col .gutter.right {
   text-align: left;
 }
-body .middle-col .app-container .gutter.right .bullet {
+body .middle-col .app-container .app-col .gutter.right .bullet {
   height: 140px;
 }
-body .middle-col .app-container .gutter.right .bullet .sliver {
+body .middle-col .app-container .app-col .gutter.right .bullet .sliver {
   float: left;
   margin: 0 0 0 20px;
 }
-body .middle-col .app-container .gutter.right .bullet .reason {
+body .middle-col .app-container .app-col .gutter.right .bullet .reason {
   margin: 0 0 0 20px;
 }
-body .middle-col .app-container .gutter.right .bullet:nth-child(1) {
+body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(1) {
   margin-top: 80px;
 }
-body .middle-col .app-container .gutter.right .bullet:nth-child(1) .reason {
+body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(1) .reason {
   margin-top: 2px;
 }
-body .middle-col .app-container .gutter.right .bullet:nth-child(2) {
+body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(2) {
   margin-top: 315px;
 }
-body .middle-col .app-container .gutter.right .bullet:nth-child(2) .reason {
+body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(2) .reason {
   margin-top: 27px;
 }
 body .middle-col .team-section {
@@ -222,7 +232,7 @@ body .middle-col .phantom-footer {
   padding: 0;
 }
 body .footer-mound-shadow {
-  display: block;
+  display: none;
   position: fixed;
   bottom: 90px;
   background-image: url(/static/img/landing/footer_drop-shadow.png);
@@ -233,7 +243,7 @@ body .footer {
   width: 100%;
   height: 90px;
   position: fixed;
-  bottom: 0;
+  bottom: -90px;
   z-index: 10;
   -webkit-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);

@@ -24,6 +24,7 @@ body {
             margin: 60px auto 0 auto;
             width: 74px;
             height: 98px;
+            .opacity(0);
         }
 
         .tag-line {
@@ -32,6 +33,7 @@ body {
             font-family: ProximaNovaLight;
             font-size: 20px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.40);
+            .opacity(0);
         }
 
         .app-container {
@@ -40,94 +42,101 @@ body {
             margin: 30px auto 0 auto;
             display: inline-block;
 
-            .dummy-app {
-                float: left;
-                background-image: url(/static/img/landing/app_sample.png);
-                margin: 0;
-                width: 436px;
-                height: 716px;
-            }
-
-            .gutter {
-                float: left;
-                margin: 0;
+            .app-col {
+                margin: 0 auto;
+                width: 829.2px;
                 height: 100%;
-                width: 262px;
 
-                .bullet {
-                    width: 100%;
+                .dummy-app {
+                    float: left;
+                    background-image: url(/static/img/landing/app_sample.png);
+                    background-size: 100% 100%;
                     margin: 0;
-
-                    .sliver {
-                        display: inline-block;
-                        height: 100%;
-                        width: 1px;
-                        background-color: rgba(48, 55, 69, 1.0);
-                    }
-
-                    .reason {
-                        display: inline-block;
-                        width: 221px;
-
-                        .summary {
-                            margin: 0;
-                            color: rgba(207, 214, 230, 1.0);
-                            font-family: ProximaNovaRegular;
-                        }
-
-                        .description {
-                            margin: 0;
-                            color: rgba(207, 214, 230, 0.40);
-                            font-family: ProximaNovaLight;
-                            margin-top: 20px;
-                            line-height: 25px;
-                        }
-                    }
+                    width: 305.2px;
+                    height: 501.2px;
                 }
 
-                &.left {
-                    text-align: right;
+                .gutter {
+                    float: left;
+                    margin: 0;
+                    height: 100%;
+                    width: 262px;
 
                     .bullet {
-                        height: 230px;
-                        margin-top: 260px;
+                        width: 100%;
+                        margin: 0;
 
                         .sliver {
-                            margin: 0 20px 0 0;
-                            float: right;
+                            display: inline-block;
+                            height: 100%;
+                            width: 1px;
+                            background-color: rgba(48, 55, 69, 1.0);
                         }
 
                         .reason {
-                            margin: 47px 20px 0 0;
-                        }
-                    }
-                }
+                            display: inline-block;
+                            width: 221px;
 
-                &.right {
-                    text-align: left;
+                            .summary {
+                                margin: 0;
+                                color: rgba(207, 214, 230, 1.0);
+                                font-family: ProximaNovaRegular;
+                            }
 
-                    .bullet {
-                        height: 140px;
-
-                        .sliver {
-                            float: left;
-                            margin: 0 0 0 20px;
-                        }
-
-                        .reason {
-                            margin: 0 0 0 20px;
-                        }
-
-                        &:nth-child(1) {
-                            margin-top: 80px;
-                            .reason {
-                                margin-top: 2px;
+                            .description {
+                                margin: 0;
+                                color: rgba(207, 214, 230, 0.40);
+                                font-family: ProximaNovaLight;
+                                margin-top: 20px;
+                                line-height: 25px;
                             }
                         }
-                        &:nth-child(2) {
-                            margin-top: 315px;
+                    }
+
+                    &.left {
+                        text-align: right;
+
+                        .bullet {
+                            height: 230px;
+                            margin-top: 260px;
+
+                            .sliver {
+                                margin: 0 20px 0 0;
+                                float: right;
+                            }
+
                             .reason {
-                                margin-top: 27px;
+                                margin: 47px 20px 0 0;
+                            }
+                        }
+                    }
+
+                    &.right {
+                        text-align: left;
+
+                        .bullet {
+                            height: 140px;
+
+                            .sliver {
+                                float: left;
+                                margin: 0 0 0 20px;
+                            }
+
+                            .reason {
+                                margin: 0 0 0 20px;
+                            }
+
+                            &:nth-child(1) {
+                                margin-top: 80px;
+                                .reason {
+                                    margin-top: 2px;
+                                }
+                            }
+                            &:nth-child(2) {
+                                margin-top: 315px;
+                                .reason {
+                                    margin-top: 27px;
+                                }
                             }
                         }
                     }
@@ -246,7 +255,7 @@ body {
     }
 
     .footer-mound-shadow {
-        display: block;
+        display: none;
         position: fixed;
         bottom: 90px;
         background-image: url(/static/img/landing/footer_drop-shadow.png);
@@ -258,7 +267,7 @@ body {
         width: 100%;
         height: 90px;
         position: fixed;
-        bottom: 0;
+        bottom: -90px;
         z-index: 10;
         .box-shadow(0 -1px 0 0 rgba(0,0,0,.1));
 

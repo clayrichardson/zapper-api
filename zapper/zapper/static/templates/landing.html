@@ -4,6 +4,7 @@
 		<link rel="shortcut icon" href="{{ STATIC_URL }}/static/img/icon/fav-icon_16.png" />
 		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}/static/css/landing.css">
 		<script type="text/javascript" src="{{ STATIC_URL }}/static/vendors/js/jquery.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}/static/js/landing.js"></script>
 		<title>Zapper - Zap Your Files</title>
 	</head>
 
@@ -12,35 +13,37 @@
 			<span class="zapper-logo"></span>
 			<p class="tag-line">The easiest way to zap files from one device to another.</p>
 			<div class="app-container">
-				<div class="gutter left">
-					<div class="bullet">
-						<div class="sliver"></div>
-						<div class="reason">
-							<p class="summary">DROP YO FILES</p>
-							<p class="description">
-								Attach as many files in any file format as you'd like. Each transfer could be up to 15gb in size. I know right? Mind blown!
-							</p>
+				<div class="app-col">
+					<div class="gutter left">
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">DROP YO FILES</p>
+								<p class="description">
+									Attach as many files in any file format as you'd like. Each transfer could be up to 15gb in size. I know right? Mind blown!
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<span class="dummy-app"></span>
-				<div class="gutter right">
-					<div class="bullet">
-						<div class="sliver"></div>
-						<div class="reason">
-							<p class="summary">CHOOSE A PERSON</p>
-							<p class="description">
-								Simply enter an email, name or even connect to facebook to see your whole list of friends for easy access.
-							</p>
+					<span class="dummy-app"></span>
+					<div class="gutter right">
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">CHOOSE A PERSON</p>
+								<p class="description">
+									Simply enter an email, name or even connect to facebook to see your whole list of friends for easy access.
+								</p>
+							</div>
 						</div>
-					</div>
-					<div class="bullet">
-						<div class="sliver"></div>
-						<div class="reason">
-							<p class="summary">AND....... SEND!</p>
-							<p class="description">
-								Yerp. Aint nothing to it but to do it.
-							</p>
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">AND....... SEND!</p>
+								<p class="description">
+									Yerp. Aint nothing to it but to do it.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -98,74 +101,4 @@
 			<div class="footer-background"></div>
 		</div>
 	</body>
-
-	<script type="text/javascript">
-		var $join_input = $('.join-form input'),
-			$join_btn = $('.join-form a');
-		$join_input.focus(function () {
-			$(this).attr('placeholder', 'john@example.com');
-			$(this).addClass('active-placeholder');
-		});
-		$join_input.blur(function () {
-			$(this).attr('placeholder', 'Join the Waiting List');
-			$(this).removeClass('active-placeholder');
-		});
-		$join_input.keypress(function (e) {
-			if (e.which === 13) {
-				$join_btn.click();
-			}
-		});
-
-		$join_btn.click(function () {
-			var email = $join_input.val();
-			// validate email
-			// error or:
-			// submit
-			// error or:
-			// success
-			return false;
-		});
-	</script>
-
-	<script type="text/javascript">
-		// the middle column needs to stay centered yet keep
-		// an absolute position to have the opaque backdrop
-		$(document).ready(function () {
-			var $footer_col = $('.footer-middle-col'),
-				$footer_mound_shadow = $('.footer-mound-shadow'),
-				$team_col = $('.team-middle-col'),
-				$team_bg = $('.team-bg'),
-				footer_col_width = $footer_col.width(),
-				footer_mound_width = $footer_mound_shadow.width(),
-				center_elem = function (elem_width, $elem, doc_width) {
-					var left_gutter = (doc_width - elem_width) / 2;
-
-					$elem.css('margin-left', left_gutter + 'px');
-				},
-				resize_function = function () {
-					var doc_width = $(window).width();
-
-					if (doc_width < 960) {
-						return;
-					}
-
-					center_elem(footer_col_width, $footer_col, doc_width);
-					center_elem(footer_mound_width, $footer_mound_shadow, doc_width);
-
-					if (doc_width < 1200) {
-						if (doc_width <= 960) {
-							doc_width = 960;
-						}
-						$team_bg.width(doc_width);
-					} else {
-						$team_bg.width(1200);
-					}
-
-					$team_col.css('left', ((doc_width - 960) / 2) + 'px');
-				};
-
-			$(window).resize(resize_function);
-			resize_function();
-		});
-	</script>
 </html>
