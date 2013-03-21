@@ -253,6 +253,60 @@ $(document).ready(function () {
 				animate();
 			}, 500);
 		});
+
+		// bubble the avatars
+		function bubbleAnimation ($avatar) {
+			/*$avatar.animate({
+				opacity: 100
+			}, {
+				duration: 10000,
+				queue: false
+			});*/
+			window.setTimeout(function () {
+				$avatar.animate({
+					width: '198px',
+					height: '198px',
+					'border-radius': '99px',
+					'margin': '0 21px'
+				}, {
+					duration: 125,
+					queue: false,
+					complete: function () {
+						$avatar.animate({
+							width: '180px',
+							height: '180px',
+							'border-radius': '90px',
+							'margin': '0 30px'
+						}, {duration: 250, queue: false});
+					}
+				});
+			}, 500);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 375);
+		}
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($('.avatar').first());
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(1)));
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(2)));
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(3)));
+		});
 	}
 
 	initialize();
