@@ -83,6 +83,8 @@ body .middle-col .app-container .app-col .gutter .bullet .sliver {
 body .middle-col .app-container .app-col .gutter .bullet .reason {
   display: inline-block;
   width: 221px;
+  opacity: 0.25;
+  filter: alpha(opacity=25);
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason .summary {
   margin: 0;
@@ -146,6 +148,8 @@ body .middle-col .team-section .team-bg {
   height: 500px;
   width: 1200px;
   background-image: url(/static/img/landing/team_bg.png);
+  opacity: 0;
+  filter: alpha(opacity=0);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin: 0 auto;

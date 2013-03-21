@@ -84,7 +84,8 @@ $(document).ready(function () {
 		// allows for events to run in order
 		// and for throttle-prevention
 		event_ready = true,
-		window_height = $(window).height();
+		window_height = $(window).height(),
+		footer_height = $('.footer').height();
 
 	function queue(condition, animation) {
 		event_queue.unshift({
@@ -147,7 +148,7 @@ $(document).ready(function () {
 			var scrollY = $(window).scrollTop(),
 				dummyY = $('.dummy-app').offset().top;
 
-			return scrollY >= dummyY || window_height >= dummyY;
+			return (window_height + scrollY) >= dummyY;
 		}, function () {
 			$('.dummy-app').animate({
 				width: '436px',
@@ -172,6 +173,70 @@ $(document).ready(function () {
 				event_ready = true;
 				animate();
 			});
+		});
+
+		// slide and fade in first bullet
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				bulletY = $('.gutter.right .bullet .reason').first().offset().top;
+			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
+		}, function () {
+			$('.gutter.right .bullet .reason').first().animate({
+				opacity: 100
+			}, 10000);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 500);
+		});
+
+		// slide and fade in second bullet
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				bulletY = $('.gutter.left .bullet .reason').offset().top;
+			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
+		}, function () {
+			$('.gutter.left .bullet .reason').animate({
+				opacity: 100
+			}, 10000);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 500);
+		});
+
+		// slide and fade in third bullet
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				bulletY = $($('.gutter.right .bullet .reason').get(1)).offset().top;
+			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
+		}, function () {
+			$($('.gutter.right .bullet .reason').get(1)).animate({
+				opacity: 100
+			}, 10000);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 500);
+		});
+
+		// fade in background of team section
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				team_bgY = $('.team-bg').offset().top;
+			return ((window_height / 2) + scrollY - footer_height) >= team_bgY;
+		}, function () {
+			$('.team-bg').animate({
+				opacity: 100
+			}, 10000);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 500);
 		});
 	}
 
