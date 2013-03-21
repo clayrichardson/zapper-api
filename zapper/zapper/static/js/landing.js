@@ -157,9 +157,12 @@ $(document).ready(function () {
 				event_ready = true;
 				animate();
 			});
+			$('.dummy-app').animate({
+				opacity: 100
+			}, {duration: 5000, queue: false});
 			$('.app-col').animate({
 				width: '960px'
-			}, 1000);
+			}, {duration: 1000, queue: false});
 		});
 
 		// slide up footer
@@ -181,7 +184,7 @@ $(document).ready(function () {
 				bulletY = $('.gutter.right .bullet .reason').first().offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
-			$('.gutter.right .bullet .reason').first().animate({
+			$('.gutter.right .bullet').first().animate({
 				opacity: 100
 			}, 10000);
 
@@ -197,7 +200,7 @@ $(document).ready(function () {
 				bulletY = $('.gutter.left .bullet .reason').offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
-			$('.gutter.left .bullet .reason').animate({
+			$('.gutter.left .bullet').animate({
 				opacity: 100
 			}, 10000);
 
@@ -213,7 +216,7 @@ $(document).ready(function () {
 				bulletY = $($('.gutter.right .bullet .reason').get(1)).offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
-			$($('.gutter.right .bullet .reason').get(1)).animate({
+			$($('.gutter.right .bullet').get(1)).animate({
 				opacity: 100
 			}, 10000);
 

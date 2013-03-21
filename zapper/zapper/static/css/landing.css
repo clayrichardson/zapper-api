@@ -63,6 +63,8 @@ body .middle-col .app-container .app-col .dummy-app {
   margin: 0;
   width: 305.2px;
   height: 501.2px;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 body .middle-col .app-container .app-col .gutter {
   float: left;
@@ -73,6 +75,8 @@ body .middle-col .app-container .app-col .gutter {
 body .middle-col .app-container .app-col .gutter .bullet {
   width: 100%;
   margin: 0;
+  opacity: 0.25;
+  filter: alpha(opacity=25);
 }
 body .middle-col .app-container .app-col .gutter .bullet .sliver {
   display: inline-block;
@@ -83,8 +87,6 @@ body .middle-col .app-container .app-col .gutter .bullet .sliver {
 body .middle-col .app-container .app-col .gutter .bullet .reason {
   display: inline-block;
   width: 221px;
-  opacity: 0.25;
-  filter: alpha(opacity=25);
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason .summary {
   margin: 0;
