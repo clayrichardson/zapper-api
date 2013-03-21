@@ -307,6 +307,43 @@ $(document).ready(function () {
 		}, function () {
 			bubbleAnimation($($('.avatar').get(3)));
 		});
+
+		// slide names and titles up and meet tagline down
+		queue(function () {
+			return true;
+		}, function () {
+			$('.bio-entry').animate({
+				'margin-top': '0px'
+			}, {
+				duration: 500,
+				queue: false,
+				complete: function () {
+					event_ready = true;
+					animate();
+				}
+			});
+
+			$('.meet-line').animate({
+				'margin-top': '0px'
+			}, {
+				duration: 500,
+				queue: false
+			});
+
+			$('.meet-line').animate({
+				opacity: 100
+			}, {duration: 10000, queue: false});
+			$('.bio-entry').animate({
+				opacity: 100
+			}, {duration: 10000, queue: false});
+
+			$('.avatar-row').animate({
+				'margin-top': '50px'
+			}, {
+				duration: 500,
+				queue: false
+			});
+		});
 	}
 
 	initialize();

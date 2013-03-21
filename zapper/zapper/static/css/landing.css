@@ -171,15 +171,17 @@ body .middle-col .team-section .team-middle-col {
   background-color: rgba(0, 0, 0, 0);
 }
 body .middle-col .team-section .team-middle-col .meet-line {
-  margin: 0;
   font-family: ProximaNovaRegular;
   font-size: 16px;
   color: #cfd6e6;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: -30px 0 0 0;
 }
 body .middle-col .team-section .team-middle-col .avatar-row {
   display: block;
-  margin-top: 50px;
+  margin-top: 80px;
   height: 198px;
 }
 body .middle-col .team-section .team-middle-col .avatar-row .avatar {
@@ -214,15 +216,17 @@ body .middle-col .team-section .team-middle-col .avatar-row .avatar:hover {
 body .middle-col .team-section .team-middle-col .bio-row {
   display: block;
   margin-top: 20px;
-  height: 50px;
+  height: 80px;
 }
 body .middle-col .team-section .team-middle-col .bio-row .bio-entry {
   display: inline-block;
   float: left;
   text-align: vertical;
   width: 180px;
-  margin: 0 30px;
+  margin: 30px 30px 0 30px;
   font-family: ProximaNovaLight;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 body .middle-col .team-section .team-middle-col .bio-row .bio-entry .name {
   font-size: 19px;
