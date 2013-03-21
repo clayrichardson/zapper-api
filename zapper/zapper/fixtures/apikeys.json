@@ -5,7 +5,9 @@
   "fields": {
     "key": "d470a6f95a0a429091b06d87c752c292",
     "secret": "d470a6f95a0a429091b06d87c752c292",
-    "enabled": true
+    "enabled": true,
+    "created":"2013-03-20 20:33:32.235278-05:00",
+    "modified":"2013-03-20 20:33:32.235278-05:00"
   }
 },
 {
@@ -14,7 +16,9 @@
   "fields": {
     "key": "c938e1ba014c4854a3ada90067891968",
     "secret": "c938e1ba014c4854a3ada90067891968",
-    "enabled": false
+    "enabled": false,
+    "created":"2013-03-20 20:33:32.235278-05:00",
+    "modified":"2013-03-20 20:33:32.235278-05:00"
   }
 }
 ]
