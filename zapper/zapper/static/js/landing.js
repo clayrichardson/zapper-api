@@ -152,17 +152,20 @@ $(document).ready(function () {
 		}, function () {
 			$('.dummy-app').animate({
 				width: '436px',
-				height: '716px'
-			}, 1000, function () {
-				event_ready = true;
-				animate();
+				height: '716px',
+				'margin-left': '0px',
+				'margin-right': '0px'
+			}, {
+				duration: 1000,
+				complete: function () {
+					event_ready = true;
+					animate();
+				},
+				queue: false
 			});
 			$('.dummy-app').animate({
 				opacity: 100
 			}, {duration: 5000, queue: false});
-			$('.app-col').animate({
-				width: '1020px'
-			}, {duration: 1000, queue: false});
 		});
 
 		// slide up footer
@@ -181,12 +184,15 @@ $(document).ready(function () {
 		// slide and fade in first bullet
 		queue(function () {
 			var scrollY = $(window).scrollTop(),
-				bulletY = $('.gutter.right .bullet .reason').first().offset().top;
+				bulletY = $('.gutter.right .bullet').first().offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
 			$('.gutter.right .bullet').first().animate({
 				opacity: 100
-			}, 10000);
+			}, {duration: 10000, queue: false});
+			$('.gutter.right .bullet').first().animate({
+				'margin-left': '0px'
+			}, {duration: 500, queue: false, easing: 'linear'});
 
 			window.setTimeout(function () {
 				event_ready = true;
@@ -197,12 +203,15 @@ $(document).ready(function () {
 		// slide and fade in second bullet
 		queue(function () {
 			var scrollY = $(window).scrollTop(),
-				bulletY = $('.gutter.left .bullet .reason').offset().top;
+				bulletY = $('.gutter.left .bullet').offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
 			$('.gutter.left .bullet').animate({
 				opacity: 100
-			}, 10000);
+			}, {duration: 10000, queue: false});
+			$('.gutter.left .bullet').animate({
+				'margin-right': '0px'
+			}, {duration: 500, queue: false, easing: 'linear'});
 
 			window.setTimeout(function () {
 				event_ready = true;
@@ -213,12 +222,15 @@ $(document).ready(function () {
 		// slide and fade in third bullet
 		queue(function () {
 			var scrollY = $(window).scrollTop(),
-				bulletY = $($('.gutter.right .bullet .reason').get(1)).offset().top;
+				bulletY = $($('.gutter.right .bullet').get(1)).offset().top;
 			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
 			$($('.gutter.right .bullet').get(1)).animate({
 				opacity: 100
-			}, 10000);
+			}, {duration: 10000, queue: false});
+			$($('.gutter.right .bullet').get(1)).animate({
+				'margin-left': '0px'
+			}, {duration: 500, queue: false, easing: 'linear'});
 
 			window.setTimeout(function () {
 				event_ready = true;

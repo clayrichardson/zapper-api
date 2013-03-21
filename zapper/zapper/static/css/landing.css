@@ -53,15 +53,15 @@ body .middle-col .app-container {
 }
 body .middle-col .app-container .app-col {
   margin: 0 auto;
-  width: 889.2px;
+  width: 1020px;
   height: 100%;
 }
 body .middle-col .app-container .app-col .dummy-app {
   float: left;
   background-image: url(/static/img/landing/app_sample.png);
   background-size: 100% 100%;
-  margin: 0;
-  width: 305.2px;
+  margin: 0 65.5px;
+  width: 305px;
   height: 501.2px;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -73,10 +73,10 @@ body .middle-col .app-container .app-col .gutter {
   width: 292px;
 }
 body .middle-col .app-container .app-col .gutter .bullet {
-  width: 100%;
+  width: 262px;
   margin: 0;
-  opacity: 0.25;
-  filter: alpha(opacity=25);
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 body .middle-col .app-container .app-col .gutter .bullet .sliver {
   display: inline-block;
@@ -86,7 +86,7 @@ body .middle-col .app-container .app-col .gutter .bullet .sliver {
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason {
   display: inline-block;
-  width: 250px;
+  width: 220px;
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason .summary {
   margin: 0;
@@ -106,6 +106,8 @@ body .middle-col .app-container .app-col .gutter.left {
 body .middle-col .app-container .app-col .gutter.left .bullet {
   height: 230px;
   margin-top: 260px;
+  float: right;
+  margin-right: 30px;
 }
 body .middle-col .app-container .app-col .gutter.left .bullet .sliver {
   margin: 0 20px 0 0;
@@ -119,6 +121,7 @@ body .middle-col .app-container .app-col .gutter.right {
 }
 body .middle-col .app-container .app-col .gutter.right .bullet {
   height: 140px;
+  margin-left: 30px;
 }
 body .middle-col .app-container .app-col .gutter.right .bullet .sliver {
   float: left;
