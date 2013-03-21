@@ -16,7 +16,7 @@ var landing_jobs = {
 			resize_function = function () {
 				var window_width = $(window).width();
 
-				if (window_width < 960) {
+				if (window_width < 1020) {
 					return;
 				}
 
@@ -24,15 +24,15 @@ var landing_jobs = {
 				center_elem(footer_mound_width, $footer_mound_shadow, window_width);
 
 				if (window_width < 1200) {
-					if (window_width <= 960) {
-						window_width = 960;
+					if (window_width <= 1020) {
+						window_width = 1020;
 					}
 					$team_bg.width(window_width);
 				} else {
 					$team_bg.width(1200);
 				}
 
-				$team_col.css('left', ((window_width - 960) / 2) + 'px');
+				$team_col.css('left', ((window_width - 1020) / 2) + 'px');
 			};
 
 		$(window).resize(resize_function);
@@ -161,7 +161,7 @@ $(document).ready(function () {
 				opacity: 100
 			}, {duration: 5000, queue: false});
 			$('.app-col').animate({
-				width: '960px'
+				width: '1020px'
 			}, {duration: 1000, queue: false});
 		});
 

@@ -13,7 +13,7 @@
 }
 html,
 body {
-  min-width: 960px;
+  min-width: 1020px;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -46,14 +46,14 @@ body .middle-col .tag-line {
   filter: alpha(opacity=0);
 }
 body .middle-col .app-container {
-  width: 960px;
+  width: 1020px;
   height: 716px;
   margin: 30px auto 0 auto;
   display: inline-block;
 }
 body .middle-col .app-container .app-col {
   margin: 0 auto;
-  width: 829.2px;
+  width: 889.2px;
   height: 100%;
 }
 body .middle-col .app-container .app-col .dummy-app {
@@ -70,7 +70,7 @@ body .middle-col .app-container .app-col .gutter {
   float: left;
   margin: 0;
   height: 100%;
-  width: 262px;
+  width: 292px;
 }
 body .middle-col .app-container .app-col .gutter .bullet {
   width: 100%;
@@ -81,12 +81,12 @@ body .middle-col .app-container .app-col .gutter .bullet {
 body .middle-col .app-container .app-col .gutter .bullet .sliver {
   display: inline-block;
   height: 100%;
-  width: 1px;
+  width: 2px;
   background-color: #303745;
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason {
   display: inline-block;
-  width: 221px;
+  width: 250px;
 }
 body .middle-col .app-container .app-col .gutter .bullet .reason .summary {
   margin: 0;
@@ -141,7 +141,7 @@ body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(2) .rea
 }
 body .middle-col .team-section {
   position: relative;
-  min-width: 960px;
+  min-width: 1020px;
   height: 500px;
   margin: 60px auto 0 auto;
 }
@@ -163,7 +163,7 @@ body .middle-col .team-section .team-middle-col {
   top: 100px;
   left: 0;
   margin: 0 auto;
-  width: 960px;
+  width: 1020x;
   z-index: 4;
   background-color: rgba(0, 0, 0, 0);
 }
