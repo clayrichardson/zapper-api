@@ -120,7 +120,6 @@ class ZapperApiKeyAuthentication(ZapperAuthentication):
 class ZapperSessionAuthentication(SessionAuthentication):
     def is_authenticated(self, request, **kwargs):
 
-        logger.debug('session request: %s' % (request))
         logger.debug('cookie name: %s' % (settings.CSRF_COOKIE_NAME))
         csrf_token = _sanitize_token(request.COOKIES.get(settings.CSRF_COOKIE_NAME, ''))
         logger.debug('csrf_token: %s' % (csrf_token))
