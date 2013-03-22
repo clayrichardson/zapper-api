@@ -4,3 +4,6 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 @ensure_csrf_cookie
 def landing_page(request):
     return render_to_response('landing.html', {})
+
+def wait_list(request):
+    return render_to_response('emails/waitlist.html', {})
