@@ -77,7 +77,16 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.abspath(__file__))), 'static')
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAJJ3U6QCPRCHORWSQ'
+AWS_SECRET_ACCESS_KEY = '5yAxGxbUVL1bugkQuQ5kbYp8USL1R/oCmgXdQMqC'
+AWS_STORAGE_BUCKET_NAME = 'zapperappstatic'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -88,7 +97,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, 'zapper/static'),
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -141,6 +150,7 @@ INSTALLED_APPS = (
     'tastypie',
     'django.contrib.admin',
     'zapper',
+    'storages',
 )
 
 if DEBUG:
