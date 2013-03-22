@@ -1,13 +1,120 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<link rel="shortcut icon" href="{{ STATIC_URL }}/static/img/icon/fav-icon_16.png" />
 		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}/static/css/landing.css">
-
-		<script data-main="{{ STATIC_URL }}/static/js/main.js" src="{{ STATIC_URL }}/static/js/require.js"></script>
-
+		<script type="text/javascript" src="{{ STATIC_URL }}/static/vendors/js/jquery.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}/static/js/landing.js"></script>
 		<title>Zapper - Zap Your Files</title>
 	</head>
 
 	<body>
+		<div class="middle-col">
+			<span class="zapper-logo"></span>
+			<p class="tag-line">The easiest way to zap files from one device to another.</p>
+			<div class="app-container">
+				<div class="app-col">
+					<div class="gutter left">
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">DROP YOUR FILES</p>
+								<p class="description">
+									Attach as many files in any file format as you'd like. Each transfer could be up to 15gb in size. I know right? Mind blown!
+								</p>
+							</div>
+						</div>
+					</div>
+					<span class="dummy-app"></span>
+					<div class="gutter right">
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">CHOOSE A PERSON</p>
+								<p class="description">
+									Simply enter an email, name or even connect to facebook to see your whole list of friends for easy access.
+								</p>
+							</div>
+						</div>
+						<div class="bullet">
+							<div class="sliver"></div>
+							<div class="reason">
+								<p class="summary">AND....... SEND!</p>
+								<p class="description">
+									Yep. Aint nothing to it but to do it.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="team-section">
+				<span class="team-bg"></span>
+				<div class="team-middle-col">
+					<p class="meet-line">MEET THE FOLKS BEHIND THE APP</p>
+					<div class="avatar-row">
+						<div class="avatar">
+						</div>
+						<div class="avatar">
+						</div>
+						<div class="avatar">
+						</div>
+						<div class="avatar">
+						</div>
+					</div>
+					<div class="bio-row">
+						<div class="bio-entry">
+							<p class="name">Didi Medina</p>
+							<p class="title">Designer</p>
+						</div>
+						<div class="bio-entry">
+							<p class="name">Vinay Hiremath</p>
+							<p class="title">Engineer</p>
+						</div>
+						<div class="bio-entry">
+							<p class="name">Clay Richardson</p>
+							<p class="title">Engineer</p>
+						</div>
+						<div class="bio-entry">
+							<p class="name">Floopi</p>
+							<p class="title">Biz Dev</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="phantom-footer"></div>
+		</div>
+		<span class="footer-mound-shadow"></span>
+		<div class="footer">
+			<div class="footer-middle-col">
+				<div class="join-box">
+					<div class="join-form">
+						<input type="text" placeholder="Join the waiting list">
+						<a href="#">
+							<span class="join-submit">
+								<span class="join-ico"></span>
+							</span>
+						</a>
+					</div>
+					<div class="zapper-share">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out Zapper App - the easiest way to zap files from one device to another!" data-via="zapperapp" data-hashtags="zapperapp" data-count="vertical">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+						<iframe class="facebook-share" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fzapperapp.com&amp;send=false&amp;layout=box_count&amp;width=56&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:56px; height:90px;" allowTransparency="true"></iframe>
+
+						<div class="g-plusone" data-size="tall" data-href="http://zapperapp.com"></div>
+
+						<script type="text/javascript">
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="footer-background"></div>
+		</div>
 	</body>
 </html>
