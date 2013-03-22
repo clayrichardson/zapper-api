@@ -1,3 +1,7 @@
+// github.com/underpull
+// twitter.com/underpull
+// vhmath.com
+
 var landing_jobs = {
 	// the middle column needs to stay centered yet keep
 	// an absolute position to have the opaque backdrop
@@ -65,6 +69,8 @@ var landing_jobs = {
 			// submit
 			// error or:
 			// success
+			$('.join-form').hide();
+			$('.zapper-share').show();
 			return false;
 		});
 	}
