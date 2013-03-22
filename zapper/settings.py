@@ -87,7 +87,7 @@ AWS_STORAGE_BUCKET_NAME = 'zapperappstatic'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = os.path.join(PROJECT_PATH, '/static/')
+STATIC_URL = os.path.join(PROJECT_PATH, 'static/')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
