@@ -47,7 +47,11 @@ var landing_jobs = {
 	// events on the footer including waitlist submission
 	footer_events: function () {
 		var $join_input = $('.join-form input'),
-			$join_btn = $('.join-form a');
+			$join_btn = $('.join-form a'),
+			validate_email = function (email) {
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			};
 		$join_input.focus(function () {
 			$(this).attr('placeholder', 'john@example.com');
 			$(this).addClass('active-placeholder');
@@ -57,6 +61,7 @@ var landing_jobs = {
 			$(this).removeClass('active-placeholder');
 		});
 		$join_input.keypress(function (e) {
+			$join_input.removeClass('error');
 			if (e.which === 13) {
 				$join_btn.click();
 			}
@@ -64,13 +69,23 @@ var landing_jobs = {
 
 		$join_btn.click(function () {
 			var email = $join_input.val();
-			// validate email
-			// error or:
-			// submit
-			// error or:
-			// success
-			$('.join-form').hide();
-			$('.zapper-share').show();
+
+			if (validate_email(email)) {
+				$.ajax({
+					type: 'POST',
+					url: '/api/v1/waitlist',
+					dataType: 'json',
+					data: {
+						'email': email
+					},
+					success: function () {
+						$('.join-form').hide();
+						$('.zapper-share').show();
+					}
+				});
+			} else {
+				$join_input.addClass('error');
+			}
 			return false;
 		});
 	}

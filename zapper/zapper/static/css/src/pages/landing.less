@@ -355,6 +355,14 @@ body {
                 &:-ms-input-placeholder {
                     #join-input-placeholder-styles();
                 }
+
+                &.error {
+                    @error-shadow: 1px 1px 0px 0px rgba(255, 0, 0, 0.3),
+                        -1px -1px 1px 0px rgba(255, 0, 0, 0.3);
+
+                    border: 1px solid #d36262;
+                    .box-shadow(@error-shadow);
+                }
             }
 
             .join-submit {

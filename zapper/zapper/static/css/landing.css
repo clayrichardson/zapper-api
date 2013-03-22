@@ -353,6 +353,12 @@ body .footer .join-form input:-ms-input-placeholder {
   font-family: ProximaNovaLight;
   font-size: 16px;
 }
+body .footer .join-form input.error {
+  border: 1px solid #d36262;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255, 0, 0, 0.3), -1px -1px 1px 0px rgba(255, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255, 0, 0, 0.3), -1px -1px 1px 0px rgba(255, 0, 0, 0.3);
+  box-shadow: 1px 1px 0px 0px rgba(255, 0, 0, 0.3), -1px -1px 1px 0px rgba(255, 0, 0, 0.3);
+}
 body .footer .join-form .join-submit {
   display: inline-block;
   float: left;
