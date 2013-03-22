@@ -87,7 +87,7 @@ AWS_STORAGE_BUCKET_NAME = 'zapperappstatic'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(PROJECT_PATH, '/static/')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -103,6 +103,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
 )
 
 # Make this unique, and don't share it with anybody.
