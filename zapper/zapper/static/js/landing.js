@@ -78,7 +78,7 @@ var landing_jobs = {
 					data: {
 						'email': email
 					},
-					success: function () {
+					success: function (response) {
 						$('.join-form').hide();
 						$('.zapper-share').show();
 					}
