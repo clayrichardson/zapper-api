@@ -9,6 +9,8 @@ python-dateutil==1.5
 python-digest==1.7
 six==1.2.0
 wsgiref==0.1.2
--e git+https://bitbucket.org/clayrichardson/django-tastypie.git@bugfix_api-key-index#egg=django-tastypie
+https://bitbucket.org/clayrichardson/django-tastypie/get/bugfix_api-key-index.tar.gz
+https://bitbucket.org/clayrichardson/django-storages-156-parse-date/get/default.tar.gz
+# -e git+https://bitbucket.org/clayrichardson/django-tastypie.git@bugfix_api-key-index#egg=django-tastypie
 
--e hg+https://bitbucket.org/clayrichardson/django-storages-156-parse-date@default#egg=django-storages
+# -e hg+https://bitbucket.org/clayrichardson/django-storages-156-parse-date@default#egg=django-storages
