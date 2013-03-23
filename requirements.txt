@@ -1,8 +1,6 @@
 Django==1.5
 MySQL-python==1.2.3
 boto==2.8.0
-django-storages==1.1.7
-django-tastypie==0.9.12
 djorm-ext-core==0.4.1
 djorm-ext-expressions==0.4.3
 djorm-ext-pgarray==0.4.1
@@ -11,3 +9,6 @@ python-dateutil==1.5
 python-digest==1.7
 six==1.2.0
 wsgiref==0.1.2
+-e git+https://bitbucket.org/clayrichardson/django-tastypie.git@bugfix_api-key-index#egg=django-tastypie
+
+-e hg+https://bitbucket.org/clayrichardson/django-storages-156-parse-date@default#egg=django-storages
