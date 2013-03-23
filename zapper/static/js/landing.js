@@ -1,7 +1,3 @@
-// github.com/underpull
-// twitter.com/underpull
-// vhmath.com
-
 var landing_jobs = {
 	// the middle column needs to stay centered yet keep
 	// an absolute position to have the opaque backdrop
@@ -195,7 +191,7 @@ $(document).ready(function () {
 				'margin-left': '0px',
 				'margin-right': '0px'
 			}, {
-				duration: 1000,
+				duration: 500,
 				complete: function () {
 					event_ready = true;
 					animate();
@@ -224,7 +220,7 @@ $(document).ready(function () {
 		queue(function () {
 			var scrollY = $(window).scrollTop(),
 				bulletY = $('.gutter.right .bullet').first().offset().top;
-			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
+			return (window_height + scrollY - footer_height) >= bulletY;
 		}, function () {
 			$('.gutter.right .bullet').first().animate({
 				opacity: 100
