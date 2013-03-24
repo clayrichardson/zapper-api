@@ -19,8 +19,9 @@ body {
         z-index: 5;
 
         .zapper-logo {
+            @logo-url: ~"{{ STATIC_URL }}img/landing/logo.png";
             display: block;
-            background-image: url(/static/img/landing/logo.png);
+            background-image: url(@logo-url);
             margin: 60px auto 0 auto;
             width: 74px;
             height: 98px;
@@ -48,8 +49,9 @@ body {
                 height: 100%;
 
                 .dummy-app {
+                    @app-url: ~"{{ STATIC_URL }}img/landing/app_sample.png";
                     float: left;
-                    background-image: url(/static/img/landing/app_sample.png);
+                    background-image: url(@app-url);
                     background-size: 100% 100%;
                     margin: 0 65.5px;
                     width: 305px;
@@ -156,10 +158,11 @@ body {
             margin: 60px auto 0 auto;
 
             .team-bg {
+                @team-bg-url: ~"{{ STATIC_URL }}img/landing/team_bg.png";
                 display: block;
                 height: 500px;
                 width: 1200px;
-                background-image: url(/static/img/landing/team_bg.png);
+                background-image: url(@team-bg-url);
                 .opacity(0);
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
@@ -207,16 +210,20 @@ body {
                         }
 
                         &:nth-child(1) {
-                            background-image: url(/static/img/landing/avatars/didi.png);
+                            @bg-url: ~"{{ STATIC_URL }}img/landing/avatars/didi.png";
+                            background-image: url(@bg-url);
                         }
                         &:nth-child(2) {
-                            background-image: url(/static/img/landing/avatars/vinay.png);
+                            @bg-url: ~"{{ STATIC_URL }}img/landing/avatars/vinay.png";
+                            background-image: url(@bg-url);
                         }
                         &:nth-child(3) {
-                            background-image: url(/static/img/landing/avatars/clay.png);
+                            @bg-url: ~"{{ STATIC_URL }}img/landing/avatars/clay.png";
+                            background-image: url(@bg-url);
                         }
                         &:nth-child(4) {
-                            background-image: url(/static/img/landing/avatars/floopi.png);
+                            @bg-url: ~"{{ STATIC_URL }}img/landing/avatars/floopi.png";
+                            background-image: url(@bg-url);
                         }
 
                         &:hover {
@@ -274,10 +281,11 @@ body {
     }
 
     .footer-mound-shadow {
+        @drop-shadow-url: ~"{{ STATIC_URL }}img/landing/footer_drop-shadow.png";
         display: none;
         position: fixed;
         bottom: 90px;
-        background-image: url(/static/img/landing/footer_drop-shadow.png);
+        background-image: url(@drop-shadow-url);
         width: 640px;
         height: 80px;
     }
@@ -414,10 +422,11 @@ body {
                 }
 
                 .join-ico {
+                    @join-url: ~"{{ STATIC_URL }}img/landing/submit_email_icon.png";
                     display: block;
                     width: 60px;
                     height: 48px;
-                    background: url(/static/img/landing/submit_email_icon.png);
+                    background: url(@join-url);
                     background-repeat: no-repeat;
                     background-position: center center;
                 }

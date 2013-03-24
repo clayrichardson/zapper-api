@@ -1,8 +1,10 @@
 @font-face {
+    @pnl-url: ~"{{ STATIC_URL }}fonts/proxima_nova/ProximaNova-Light.otf";
     font-family: ProximaNovaLight;
-    src: url(/static/fonts/proxima_nova/ProximaNova-Light.otf) format('opentype');
+    src: url(@pnl-url) format('opentype');
 }
 @font-face {
+    @pnr-url: ~"{{ STATIC_URL }}fonts/proxima_nova/ProximaNova-Regular.otf";
     font-family: ProximaNovaRegular;
-    src: url(/static/fonts/proxima_nova/ProximaNova-Regular.otf) format('opentype');
+    src: url(@pnr-url) format('opentype');
 }
