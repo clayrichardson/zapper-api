@@ -126,11 +126,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django_hosts.middleware.HostsMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'zapper.urls'
+ROOT_HOSTCONF = 'zapper.hosts'
+DEFAULT_HOST = 'wildcard'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'zapper.wsgi.application'
@@ -153,6 +156,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'zapper',
     'storages',
+    'django_hosts',
 )
 
 if DEBUG:
