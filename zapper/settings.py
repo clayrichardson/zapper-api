@@ -131,7 +131,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'zapper.urls'
+ROOT_URLCONF = 'zapper.urls.default'
 ROOT_HOSTCONF = 'zapper.hosts'
 DEFAULT_HOST = 'wildcard'
 
