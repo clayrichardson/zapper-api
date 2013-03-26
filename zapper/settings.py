@@ -13,16 +13,29 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': config.DATABASE_ENGINE,
-        'NAME': config.DATABASE_NAME,
-        'USER': config.DATABASE_USER,
-        'PASSWORD': config.DATABASE_PASSWORD,
-        'HOST': config.DATABASE_HOST,
-        'PORT': config.DATABASE_PORT,
-    }
-}
+if 'RDS_DB_NAME' in os.environ:
+ DATABASES = {
+  'default': {
+  'ENGINE': 'django.db.backends.mysql',
+  'NAME': os.environ['RDS_DB_NAME'],
+  'USER': os.environ['RDS_USERNAME'],
+  'PASSWORD': os.environ['RDS_PASSWORD'],
+  'HOST': os.environ['RDS_HOSTNAME'],
+  'PORT': os.environ['RDS_PORT'],
+  }
+ }
+
+else:
+  DATABASES = {
+      'default': {
+          'ENGINE': config.DATABASE_ENGINE,
+          'NAME': config.DATABASE_NAME,
+          'USER': config.DATABASE_USER,
+          'PASSWORD': config.DATABASE_PASSWORD,
+          'HOST': config.DATABASE_HOST,
+          'PORT': config.DATABASE_PORT,
+      }
+  }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -64,11 +77,17 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT  = ''
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAJJ3U6QCPRCHORWSQ'
+AWS_SECRET_ACCESS_KEY = '5yAxGxbUVL1bugkQuQ5kbYp8USL1R/oCmgXdQMqC'
+AWS_STORAGE_BUCKET_NAME = 'zapperappstatic'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://s3-us-west-1.amazonaws.com/zapperappstatic/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -84,6 +103,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -128,6 +152,7 @@ INSTALLED_APPS = (
     'tastypie',
     'django.contrib.admin',
     'zapper',
+    'storages',
 )
 
 if DEBUG:

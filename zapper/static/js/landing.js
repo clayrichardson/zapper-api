@@ -277,7 +277,7 @@ $(document).ready(function () {
 		queue(function () {
 			var scrollY = $(window).scrollTop(),
 				team_bgY = $('.team-bg').offset().top;
-			return ((window_height / 2) + scrollY - footer_height) >= team_bgY;
+			return (window_height + scrollY - footer_height) >= team_bgY;
 		}, function () {
 			$('.team-bg').animate({
 				opacity: 100
