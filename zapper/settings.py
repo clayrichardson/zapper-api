@@ -87,7 +87,8 @@ AWS_STORAGE_BUCKET_NAME = 'zapperappstatic'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://s3-us-west-1.amazonaws.com/zapperappstatic/'
+#STATIC_URL = 'http://s3-us-west-1.amazonaws.com/zapperappstatic/'
+STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
