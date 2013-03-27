@@ -256,7 +256,9 @@ $(document).ready(function () {
 
 		// slide and fade in third bullet
 		queue(function () {
-			return true;
+			var scrollY = $(window).scrollTop(),
+				bulletY = $($('.gutter.right .bullet').get(1)).offset().top;
+			return ((window_height / 2) + scrollY - footer_height) >= bulletY;
 		}, function () {
 			$($('.gutter.right .bullet').get(1)).animate({
 				opacity: 100
@@ -269,6 +271,113 @@ $(document).ready(function () {
 				event_ready = true;
 				animate();
 			}, 500);
+		});
+
+		// fade in background of team section
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				team_bgY = $('.team-bg').offset().top;
+			return (window_height + scrollY - footer_height) >= team_bgY;
+		}, function () {
+			$('.team-bg').animate({
+				opacity: 100
+			}, 10000);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 500);
+		});
+
+		// bubble the avatars
+		function bubbleAnimation ($avatar) {
+			window.setTimeout(function () {
+				$avatar.animate({
+					width: '198px',
+					height: '198px',
+					'border-radius': '99px',
+					'margin': '0 21px'
+				}, {
+					duration: 125,
+					queue: false,
+					complete: function () {
+						$avatar.animate({
+							width: '180px',
+							height: '180px',
+							'border-radius': '90px',
+							'margin': '0 30px'
+						}, {
+							duration: 250,
+							queue: false,
+							complete: function () {
+								$avatar.addClass('bubbled');
+							}
+						});
+					}
+				});
+			}, 500);
+
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 375);
+		}
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($('.avatar').first());
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(1)));
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(2)));
+		});
+		queue(function () {
+			return true;
+		}, function () {
+			bubbleAnimation($($('.avatar').get(3)));
+		});
+
+		// slide names and titles up and meet tagline down
+		queue(function () {
+			return true;
+		}, function () {
+			$('.bio-entry').animate({
+				'margin-top': '0px'
+			}, {
+				duration: 500,
+				queue: false,
+				complete: function () {
+					event_ready = true;
+					animate();
+				}
+			});
+
+			$('.meet-line').animate({
+				'margin-top': '0px'
+			}, {
+				duration: 500,
+				queue: false
+			});
+
+			$('.meet-line').animate({
+				opacity: 100
+			}, {duration: 10000, queue: false});
+			$('.bio-entry').animate({
+				opacity: 100
+			}, {duration: 10000, queue: false});
+
+			$('.avatar-row').animate({
+				'margin-top': '50px'
+			}, {
+				duration: 500,
+				queue: false
+			});
 		});
 	}
 
