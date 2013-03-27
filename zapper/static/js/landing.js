@@ -17,16 +17,13 @@ var landing_jobs = {
 				var window_width = $(window).width();
 
 				if (window_width < 1020) {
-					return;
+					window_width = 1020;
 				}
 
 				center_elem(footer_col_width, $footer_col, window_width);
 				center_elem(footer_mound_width, $footer_mound_shadow, window_width);
 
 				if (window_width < 1200) {
-					if (window_width <= 1020) {
-						window_width = 1020;
-					}
 					$team_bg.width(window_width);
 				} else {
 					$team_bg.width(1200);
