@@ -142,6 +142,111 @@ body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(2) {
 body .middle-col .app-container .app-col .gutter.right .bullet:nth-child(2) .reason {
   margin-top: 27px;
 }
+body .middle-col .team-section {
+  position: relative;
+  min-width: 1020px;
+  height: 500px;
+  margin: 60px auto 0 auto;
+}
+body .middle-col .team-section .team-bg {
+  display: block;
+  height: 500px;
+  width: 1200px;
+  background-image: url(../img/landing/team_bg.png);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  z-index: 3;
+}
+body .middle-col .team-section .team-middle-col {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  margin: 0 auto;
+  width: 1020x;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0);
+}
+body .middle-col .team-section .team-middle-col .meet-line {
+  font-family: ProximaNovaRegular;
+  font-size: 16px;
+  color: #cfd6e6;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: -30px 0 0 0;
+}
+body .middle-col .team-section .team-middle-col .avatar-row {
+  display: block;
+  margin-top: 80px;
+  height: 198px;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar {
+  display: inline-block;
+  float: left;
+  height: 0px;
+  width: 0px;
+  border-radius: 0px;
+  margin: 117px 90px 0 90px;
+  background-size: 100%;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar.bubbled {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 1px 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(1) {
+  background-image: url(../img/landing/avatars/didi.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(2) {
+  background-image: url(../img/landing/avatars/vinay.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(3) {
+  background-image: url(../img/landing/avatars/clay.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:nth-child(4) {
+  background-image: url(../img/landing/avatars/floopi.png);
+}
+body .middle-col .team-section .team-middle-col .avatar-row .avatar:hover {
+  background-position: 0 100%;
+}
+body .middle-col .team-section .team-middle-col .bio-row {
+  display: block;
+  margin-top: 20px;
+  height: 80px;
+}
+body .middle-col .team-section .team-middle-col .bio-row .bio-entry {
+  display: inline-block;
+  float: left;
+  text-align: vertical;
+  width: 180px;
+  margin: 30px 30px 0 30px;
+  font-family: ProximaNovaLight;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+body .middle-col .team-section .team-middle-col .bio-row .bio-entry a {
+  text-decoration: none;
+}
+body .middle-col .team-section .team-middle-col .bio-row .bio-entry .name {
+  font-size: 19px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: #cfd6e6;
+  margin: 0;
+}
+body .middle-col .team-section .team-middle-col .bio-row .bio-entry .name:hover {
+  text-decoration: underline;
+}
+body .middle-col .team-section .team-middle-col .bio-row .bio-entry .title {
+  font-size: 13px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: rgba(207, 214, 230, 0.5);
+}
 body .middle-col .phantom-footer {
   visibility: hidden;
   height: 90px;
