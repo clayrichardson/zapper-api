@@ -5,6 +5,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from tastypie.authentication import Authentication
 from tastypie.authorization import Authorization
 from tastypie.resources import ModelResource
+from tastypie.serializers import Serializer
 
 from zapper.auth import ZapperSessionAuthentication
 
@@ -19,9 +20,9 @@ class WaitListResource(ModelResource):
          queryset = WaitList.objects.all()
          allowed_methods = ['post']
          include_resource_uri = False
-         excludes = ['email', 'created']
          authentication = ZapperSessionAuthentication()
          authorization = Authorization()
+         serialization = Serializer(formats=['json'])
 
      def wrap_view(self, view):
          @ensure_csrf_cookie
