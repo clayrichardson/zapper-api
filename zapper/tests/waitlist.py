@@ -6,6 +6,7 @@ from tastypie.test import ResourceTestCase
 from zapper.models import WaitList
 
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -32,4 +33,9 @@ class WaitListResourceTest(ResourceTestCase):
         waitlist_length += 1
         logger.debug('waitlist_length: %s' % (waitlist_length))
         self.assertEqual(waitlist_length, WaitList.objects.count())
+
+        entry = WaitList.objects.get(email=post_data['email'])
+
+        self.assertEqual(post_data['email'], entry.email)
+
 
