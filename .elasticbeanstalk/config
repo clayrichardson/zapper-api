@@ -1,0 +1,23 @@
+[global]
+ApplicationName=zapper-api
+AwsCredentialFile=/Users/richardsonclay/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-west-1.amazonaws.com
+EnvironmentName=zapper-api-env
+OptionSettingFile=/Users/richardsonclay/sources/git/github/private/zapper-api/.elasticbeanstalk/optionsettings.zapper-api-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=us-west-1
+ServiceEndpoint=https://elasticbeanstalk.us-west-1.amazonaws.com
+SolutionStack=64bit Amazon Linux running Python
+
+[branches]
+production_elastic-beanstalk=zapper-api-production
+
+[branch:production_elastic-beanstalk]
+EnvironmentName=zapper-api-production
+OptionSettingFile=/Users/richardsonclay/sources/git/github/private/zapper-api/.elasticbeanstalk/optionsettings.zapper-api-production
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+
