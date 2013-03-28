@@ -15,5 +15,4 @@ urlpatterns = patterns('',
     url(r'^api/', include(v1_api.urls)),
 
     url(r'^$', 'zapper.views.landing_page'),
-    url(r'^waitlist$', 'zapper.views.wait_list'),
 )
