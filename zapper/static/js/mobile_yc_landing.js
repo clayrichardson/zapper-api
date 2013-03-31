@@ -195,6 +195,39 @@ $(document).ready(function () {
 				animate();
 			});
 		});
+
+		// fade in bullet points
+		function fadeBullet ($elem) {
+			$elem.animate({
+				opacity: 100
+			}, {duration: 10000, queue: false});
+			window.setTimeout(function () {
+				event_ready = true;
+				animate();
+			}, 1000);
+		}
+
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				bulletY = $('.bullet').first().offset().top;
+
+			return (window_height + scrollY - footer_height) >= bulletY;
+		}, function () {
+			fadeBullet($('.bullet').first());
+		});
+		queue(function () {
+			var scrollY = $(window).scrollTop(),
+				bulletY = $($('.bullet').get(1)).offset().top;
+
+			return (window_height + scrollY - footer_height) >= bulletY;
+		}, function () {
+			fadeBullet($($('.bullet').get(1)));
+		});
+		queue(function () {
+			return true
+		}, function () {
+			fadeBullet($($('.bullet').get(2)));
+		});
 	}
 
 	initialize();

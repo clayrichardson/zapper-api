@@ -55,6 +55,27 @@ body .middle-col .dummy-app {
   opacity: 0;
   filter: alpha(opacity=0);
 }
+body .middle-col .bullet-points {
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
+body .middle-col .bullet-points .bullet {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin-top: 35px;
+}
+body .middle-col .bullet-points .bullet .summary {
+  margin: 0;
+  color: #cfd6e6;
+  font-family: ProximaNovaRegular;
+}
+body .middle-col .bullet-points .bullet .description {
+  margin: 0;
+  color: rgba(207, 214, 230, 0.4);
+  font-family: ProximaNovaLight;
+  line-heigh: 25px;
+}
 body .middle-col .phantom-footer {
   visibility: hidden;
   height: 90px;
