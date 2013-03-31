@@ -15,7 +15,7 @@ var landing_jobs = {
 				var window_width = $(window).width();
 
 				if (window_width < 320) {
-					return;
+					window_width = 320;
 				}
 
 				center_elem(footer_col_width, $footer_col, window_width);
