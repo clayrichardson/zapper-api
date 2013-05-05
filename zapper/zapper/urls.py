@@ -3,10 +3,17 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from tastypie.api import Api
 
+from zapper.api import ApiKeyResource
+from zapper.api import FileResource
+from zapper.api import UserResource
 from zapper.api import WaitListResource
 
 v1_api = Api(api_name = 'v1')
+v1_api.register(ApiKeyResource())
+v1_api.register(FileResource())
+v1_api.register(UserResource())
 v1_api.register(WaitListResource())
+
 
 admin.autodiscover()
 
